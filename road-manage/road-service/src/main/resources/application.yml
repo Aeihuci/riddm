@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: dev
+  mvc:
+    servlet:
+      load-on-startup: 1
+  application:
+    name: ROAD_SERVICE
+#打印sql语句
+logging:
+  level:
+    com.yicun.road.service.mapper: DEBUG
+server:
+  servlet:
+    context-path: /road-service
+  port: 8090
