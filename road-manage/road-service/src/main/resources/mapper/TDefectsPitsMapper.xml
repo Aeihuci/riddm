@@ -3,6 +3,6 @@
 <mapper namespace="com.yicun.road.service.mapper.TDefectsPitsMapper">
 
     <select id="queryTDefectsPitsList" resultType="com.yicun.road.service.pojo.disease.TDefectsPits">
-
+        select * from t_defects_pits
     </select>
 </mapper>

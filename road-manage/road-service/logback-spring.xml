@@ -22,7 +22,7 @@
     <!-- 按照每天生成日志文件 -->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>logs/order_server_%d{yyyy-MM-dd}.log</FileNamePattern>
+            <FileNamePattern>logs/order_report_%d{yyyy-MM-dd}.log</FileNamePattern>
             <MaxHistory>360</MaxHistory>
         </rollingPolicy>
         <encoder>
@@ -31,7 +31,7 @@
             <charset>UTF-8</charset>
         </encoder>
     </appender>
-    <!--日志分布式记录-->
+
 
     <!-- 日志输出级别 -->
     <springProfile name="dev,test">
@@ -40,10 +40,11 @@
             <appender-ref ref="FILE" />
         </root>
     </springProfile>
-    <springProfile name="prod">
+    <springProfile name="prod,tg">
         <root level="INFO">
             <appender-ref ref="CONSOLE" />
             <appender-ref ref="FILE" />
+            <appender-ref ref="order_server" />
         </root>
     </springProfile>
 
