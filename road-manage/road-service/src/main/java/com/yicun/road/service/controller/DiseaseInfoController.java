@@ -21,7 +21,7 @@ public class DiseaseInfoController {
      * @param tDefectsPits
      * @return
      */
-    @PostMapping("queryList")
+    @PostMapping("queryDiseaseList")
     public Page<TDefectsPits> queryTDefectsPitsList(@RequestBody TDefectsPits tDefectsPits){
         try {
             Page<TDefectsPits> page = diseaseService.queryTDefectsPitsList(tDefectsPits);
